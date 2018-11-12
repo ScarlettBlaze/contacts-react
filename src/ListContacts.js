@@ -22,6 +22,7 @@ class ListContacts extends Component {
         const {query} = this.state
         let showingContacts
 
+        // Filter and sort while user is typing in search bar.
         if (query) {
             const match = new RegExp(escapeRegExp(query), 'i')
             showingContacts = contacts.filter((contact) => match.test(contact.name))
@@ -33,11 +34,15 @@ class ListContacts extends Component {
 
         return (
             <div className="list-contacts">
+
+                {/* Render search bar. */}
                 <div className="list-contacts-top">
                     <input className="search-contacts" type="text" 
                     placeholder="Search contacts" value={query} 
                     onChange={(event) => this.updateQuery(event.target.value)}/>
                 </div>
+
+                {/* Render list of contacts. */}
                 <ol className="contact-list">
                     {showingContacts.map((contact) => (
                         <li key={contact.id}                     className="contact-list-item">
