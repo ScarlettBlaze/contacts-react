@@ -27,6 +27,9 @@ class App extends Component {
      <div className="app">
         {this.state.screen === 'list' && (
           <ListContacts 
+            onNavigate={() => {
+              this.setState({screen: 'create'})
+            }}
             onDeleteContact= {this.removeContact} 
             contacts={this.state.contacts}
           />
