@@ -42,6 +42,12 @@ class ListContacts extends Component {
                     onChange={(event) => this.updateQuery(event.target.value)}/>
                 </div>
 
+                {showingContacts.length !== contacts.length && (
+                    <div className="showing-contacts">
+                        <span>Now showing {showingContacts.length} of {contacts.length} total</span>
+                    </div>
+                )}
+
                 {/* Render list of contacts. */}
                 <ol className="contact-list">
                     {showingContacts.map((contact) => (
