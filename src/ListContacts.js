@@ -41,9 +41,20 @@ class ListContacts extends Component {
 
                 {/* Render search bar. */}
                 <div className="list-contacts-top">
-                    <input className="search-contacts" type="text" 
-                    placeholder="Search contacts" value={query} 
-                    onChange={(event) => this.updateQuery(event.target.value)}/>
+                    <input 
+                        className="search-contacts" 
+                        type="text" 
+                        placeholder="Search contacts" 
+                        value={query} 
+                        onChange={(event) => this.updateQuery(event.target.value)}
+                    />
+
+                    <a 
+                        href="#create"
+                        onClick={() => {}}
+                        className="add-contact"
+                    >Add Contact</a>
+
                 </div>
 
                 {showingContacts.length !== contacts.length && (
